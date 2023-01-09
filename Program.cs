@@ -1,4 +1,12 @@
+using core_backend;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+// Register database context file
+builder.Services.AddDbContext<DatabaseContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnectionString")));
 
 // Add services to the container.
 
