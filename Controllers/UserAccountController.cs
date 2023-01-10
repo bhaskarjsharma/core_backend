@@ -26,7 +26,7 @@ namespace core_backend.Controllers
             newUser.Name = name;
             newUser.ContactNumber = contact;
 
-            db.Add(newUser);
+            db.User.Add(newUser);
             db.SaveChanges();
 
             return "";
@@ -38,7 +38,7 @@ namespace core_backend.Controllers
         {
 
             User user = db.User.Where(m => m.Email == email && m.Password == password).First();
-            if(user != null)
+            if (user != null)
             {
                 user.Name = "sf";
                 db.Entry(user).State = EntityState.Modified;

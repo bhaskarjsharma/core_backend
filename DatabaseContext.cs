@@ -11,6 +11,7 @@ namespace core_backend
         }
 
         public DbSet<User> User { get; set; }
+        public DbSet<Advertisement> Advertisement { get; set; }
     }
 }
 
